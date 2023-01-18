@@ -1,0 +1,9 @@
+{
+  "api": "http://0.0.0.0:4000",
+  "url": "http://0.0.0.0:3000/",
+  "rethinkdb": {
+    "port": 28015,
+    "db": "my_finance_v3",
+    "host":"my-finance-rdb"
+  }
+}
