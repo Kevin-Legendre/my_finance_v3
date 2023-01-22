@@ -1,9 +1,8 @@
 <template>
-  <p>home index</p>
+  <p>welcome to dashboard</p>
 </template>
 
 <script>
 export default {
-  layout: 'home',
 }
 </script>

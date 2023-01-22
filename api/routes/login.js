@@ -1,5 +1,5 @@
 const express = require('express')
-const { uuid } = require('uuidv4')
+const { v4: uuidv4 } = require('uuid');
 const { sign } = require('jsonwebtoken')
 const { isEmail } = require('validator')
 const { jwt } = require('lib/config')
@@ -36,13 +36,12 @@ router.post('/signup', (req, res, next) => {
 
     const user = new User({
       email,
-      id: 'usr_' + (uuid().split('-').pop()),
+      id: 'usr_' + (uuidv4().split('-').pop()),
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       password: req.body.password
     })
-
-    return user.save().then((user) => res.json(res.json(sign({ email, id: user.id }, jwt.secret, jwt.opts))))
+    return user.save().then((user) => res.json(sign({ email, id: user.id }, jwt.secret, jwt.opts)))
   }).error(next)
 })
 
