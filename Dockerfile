@@ -1,4 +1,4 @@
-FROM node:lts as client-web
+FROM node:16 as client-web
 
 RUN mkdir app
 
@@ -12,9 +12,9 @@ RUN yarn config set legacy-peer-deps true
 
 RUN yarn 
 
-CMD yarn serve
+CMD yarn dev
 
-FROM node:lts as api
+FROM node:16-slim as api
 
 RUN mkdir app
 

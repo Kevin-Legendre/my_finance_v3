@@ -1,26 +1,4 @@
 services:
-  client-web:
-    container_name: my-finance-client-web
-    build:
-      context: .
-      target: client-web
-    volumes:
-      - ./client-web/src:/app/src
-    ports:
-      - 3000:8080
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-      - NODE_ENV=development
-  api:
-    container_name: my-finance-api
-    build:
-      context: .
-      target: api
-    volumes:
-      - ./api:/app
-    ports:
-      - 4000:4000
-    command: yarn dev
   rdb:
     container_name: my-finance-rdb
     image: rethinkdb:2.4
@@ -28,4 +6,5 @@ services:
     volumes:
       - ./api/rdb:/data
     ports:
+      - "28015:28015"
       - "3080:8080"

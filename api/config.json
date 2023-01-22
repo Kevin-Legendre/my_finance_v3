@@ -5,5 +5,10 @@
     "port": 28015,
     "db": "my_finance_v3",
     "host":"my-finance-rdb"
+  },
+  "rethinkdbDev": {
+    "port": 28015,
+    "db": "my_finance_v3",
+    "host":"localhost"
   }
 }
